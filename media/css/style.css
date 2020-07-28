@@ -1,0 +1,27 @@
+.ph-mod-sct-price-box {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.ph-mod-sct-price-new {
+   margin: 0.3rem;
+   /*color: #f0c819;*/
+}
+
+.ph-mod-sct-price-original {
+
+    font-size:80%;
+    text-decoration: line-through;
+    margin: 0.3rem;
+}
+
+.ph-mod-sct-countdown-text-prefix {
+    /*color: #f0c819;*/
+}
+
+
+
+

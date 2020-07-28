@@ -1,0 +1,20 @@
+{
+	"author": "Jan Pavelka (www.phoca.cz)",
+	"authorUrl": "https://www.phoca.cz",
+	"copyright": "Jan Pavelka",
+	"license": "GNU/GPL",
+	"projectName": "PhocaCartSalesCountdownTimerModule",
+	"extensionName": "Phoca Cart Sales Countdown Timer Module",
+	"projectInitials" : "PC",				  
+	"description": "Phoca Cart Sales Countdown Timer Module - a Joomla! CMS module which displays sales countdown timer - remaining days, hours and minutes of a special discount or sale event.",
+	"projectUrl": "https://www.phoca.cz/phoca-cart-sales-countdown-timer-module",
+	"projectDocumentationUrl": "https://www.phoca.cz/documentation/",
+	"projectMainComponent": "Phoca Cart",
+	"projectMainComponentInfoUrl": "https://www.phoca.cz/project/phocacart-joomla-ecommerce",
+	"projectDemo" : {
+		"Joomla! - Phoca Cart Demo": "https://www.phoca.cz/phocacartdemo/",
+		"Joomla! - Phoca Cart - Astroid Template Demo": "https://www.phoca.cz/phocacartdemo/astroid/",
+		"Phoca Cart Sales Countdown Timer Module - Video": "https://youtu.be/Wn3THsvE91Q"
+	},
+	"projectColor": "#129ed9"
+}
