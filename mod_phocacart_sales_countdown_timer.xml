@@ -7,7 +7,7 @@
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.3Beta</version>
+	<version>3.5.3</version>
 	<description>MOD_PHOCACART_SALES_COUNTDOWN_TIMER_DESCRIPTION</description>
 	<projectName>PhocaCartSalesCountdownTimerModule</projectName>
 
@@ -20,6 +20,7 @@
 	<files>
 		<folder>tmpl</folder>
 		<filename module="mod_phocacart_sales_countdown_timer">index.html</filename>
+		<filename module="mod_phocacart_sales_countdown_timer">manifest.xml</filename>
 		<filename module="mod_phocacart_sales_countdown_timer">mod_phocacart_sales_countdown_timer.php</filename>
 	</files>
 
@@ -78,7 +79,7 @@
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
                 </field>
 
-                <field name="load_swiper_library" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_LOAD_SWIPER_JS_LIBRARY_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_LOAD_SWIPER_LIBRARY_DESC">
+                <field name="load_swiper_library" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_LOAD_SWIPER_JS_LIBRARY_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_LOAD_SWIPER_JS_LIBRARY_DESC">
                     <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
                 </field>
