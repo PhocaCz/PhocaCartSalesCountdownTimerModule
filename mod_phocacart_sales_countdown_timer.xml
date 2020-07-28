@@ -20,7 +20,6 @@
 	<files>
 		<folder>tmpl</folder>
 		<filename module="mod_phocacart_sales_countdown_timer">index.html</filename>
-		<filename module="mod_phocacart_sales_countdown_timer">manifest.xml</filename>
 		<filename module="mod_phocacart_sales_countdown_timer">mod_phocacart_sales_countdown_timer.php</filename>
 	</files>
 
@@ -103,7 +102,7 @@
 
                 <field name="item_description_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 6%;\n top: 25%;\n font-size: 1.5vw;\n z-index: 1000;\n text-align: left;\n color: #555;\n background-color: rgba(255,255,255,0.5);\n padding: 0 0.5vw;"/>
 
-                <field name="item_description_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_ANIMATION_DESC"/>
+                <field name="item_description_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_ANIMATION_DESC" hint="fadeIn"/>
 
 
                 <field name="item_price_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 40%;\n font-size: 3vw;\n z-index: 1000;\n text-align: center;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
@@ -166,9 +165,9 @@
                     <option value="original">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_ORIGINAL_IMAGE</option>
                 </field>
 
-                <field name="item_image1_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_DESC"/>
+                <field name="item_image1_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 2s;\n position: absolute;\n bottom: 20%;\n left: 7%;\n z-index: 1002;"/>
 
-                <field name="item_image1_size_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_SIZE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_SIZE_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 2s;\n position: absolute;\n bottom: 20%;\n left: 7%;\n z-index: 1002;"/>
+                <field name="item_image1_size_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_SIZE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_SIZE_CSS_DESC"/>
 
                 <field name="item_image1_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_ANIMATION_DESC" hint="zoomIn"/>
 
