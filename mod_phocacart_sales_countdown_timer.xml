@@ -129,7 +129,7 @@
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
                 </field>
 
-                <field name="item_stock_display" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_STOCK_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_STOCK_DESC">
+                <field name="item_stock_display" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_STOCK_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_STOCK_DESC">
                     <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
                 </field>
