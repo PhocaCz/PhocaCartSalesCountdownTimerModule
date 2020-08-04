@@ -4,10 +4,10 @@
 		<description><![CDATA[ Phoca Cart Sales Countdown Timer Module - a Joomla! CMS module which displays sales countdown timer - remaining days, hours and minutes of a special discount or sale event. ]]></description>
 		<element>mod_phocacart_sales_countdown_timer</element>
 		<type>module</type>
-		<version>3.5.3</version>
-		<infourl title="Phoca Cart Sales Countdown Timer Module 3.5.3">https://www.phoca.cz/</infourl>
+		<version>3.5.4</version>
+		<infourl title="Phoca Cart Sales Countdown Timer Module 3.5.4">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCartSalesCountdownTimerModule/releases/download/3.5.3/mod_phocacart_sales_countdown_timer_v3.5.3.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCartSalesCountdownTimerModule/releases/download/3.5.4/mod_phocacart_sales_countdown_timer_v3.5.4.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>

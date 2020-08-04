@@ -2,12 +2,12 @@
 <extension type="module" client="site" method="upgrade" version="3.9">
 	<name>mod_phocacart_sales_countdown_timer</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>28/07/2020</creationDate>
+	<creationDate>04/08/2020</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.3</version>
+	<version>3.5.4</version>
 	<description>MOD_PHOCACART_SALES_COUNTDOWN_TIMER_DESCRIPTION</description>
 	<projectName>PhocaCartSalesCountdownTimerModule</projectName>
 
@@ -90,7 +90,7 @@
             <fieldset name="items" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELDSET_PRODUCT_OPTIONS_LABEL">
 
 
-                <field name="item_title_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_TITLE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_TITLE_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 6%;\n top: 15%;\n font-size: 3vw;\n z-index: 1000;\n text-align: center;\n color: #555;\n background-color: rgba(255,255,255,0.5);\n padding: 0 0.5vw;"/>
+                <field name="item_title_css" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_TITLE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_TITLE_CSS_DESC" default="animation-duration: 5s; animation-delay: 0s; position: absolute; left: 6%; top: 15%; font-size: 3vw; z-index: 1000; text-align: center; color: #555; background-color: rgba(255,255,255,0.5); padding: 0 0.5vw;" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 6%;\n top: 15%;\n font-size: 3vw;\n z-index: 1000;\n text-align: center;\n color: #555;\n background-color: rgba(255,255,255,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_title_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_TITLE_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_TITLE_ANIMATION_DESC" hint="fadeIn"/>
 
@@ -100,12 +100,12 @@
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
                 </field>
 
-                <field name="item_description_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 6%;\n top: 25%;\n font-size: 1.5vw;\n z-index: 1000;\n text-align: left;\n color: #555;\n background-color: rgba(255,255,255,0.5);\n padding: 0 0.5vw;"/>
+                <field name="item_description_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; left: 6%; top: 25%; font-size: 1.5vw; z-index: 1000; text-align: left; color: #555; background-color: rgba(255,255,255,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 6%;\n top: 25%;\n font-size: 1.5vw;\n z-index: 1000;\n text-align: left;\n color: #555;\n background-color: rgba(255,255,255,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_description_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DESCRIPTION_ANIMATION_DESC" hint="fadeIn"/>
 
 
-                <field name="item_price_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 40%;\n font-size: 3vw;\n z-index: 1000;\n text-align: center;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
+                <field name="item_price_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; left: 60%; bottom: 40%; font-size: 3vw; z-index: 1000; text-align: center; color: #fff; background-color: rgba(0,0,0,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 40%;\n font-size: 3vw;\n z-index: 1000;\n text-align: center;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_price_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_PRICE_ANIMATION_DESC" hint="fadeIn"/>
 
@@ -114,7 +114,7 @@
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
                 </field>
 
-                <field name="item_discount_description_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DISCOUNT_DESCRIPTION_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DISCOUNT_DESCRIPTION_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 35%;\n font-size: 1.5vw;\n z-index: 1000;\n text-align: left;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
+                <field name="item_discount_description_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; left: 60%; bottom: 35%; font-size: 1.5vw; z-index: 1000; text-align: left; color: #fff; background-color: rgba(0,0,0,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DISCOUNT_DESCRIPTION_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DISCOUNT_DESCRIPTION_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 35%;\n font-size: 1.5vw;\n z-index: 1000;\n text-align: left;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_discount_description_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DISCOUNT_DESCRIPTION_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_PRODUCT_DISCOUNT_DESCRIPTION_ANIMATION_DESC" hint="fadeIn"/>
 
@@ -137,7 +137,7 @@
                 <field name="item_stock_text_prefix" default="" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_TEXT_PREFIX_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_TEXT_PREFIX_DESC"/>
                 <field name="item_stock_text_suffix" default="" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_TEXT_SUFFIX_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_TEXT_SUFFIX_DESC"/>
 
-                <field name="item_stock_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 30%;\n font-size: 1vw;\n z-index: 1000;\n text-align: left;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
+                <field name="item_stock_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; left: 60%; bottom: 30%; font-size: 1vw; z-index: 1000; text-align: left; color: #fff; background-color: rgba(0,0,0,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n left: 60%;\n bottom: 30%;\n font-size: 1vw;\n z-index: 1000;\n text-align: left;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_stock_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_STOCK_ANIMATION_DESC" hint="fadeIn"/>
 
@@ -148,7 +148,7 @@
                     <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_PRODUCT_VIEW</option>
                 </field>
 
-                <field name="item_button_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_BUTTON_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_BUTTON_CSS_DESC" hint="animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n right: 5%;\n bottom: 17%;\n font-size: 1.5vw;\n text-transform:uppercase;\n font-weight: bold;\n text-align: center;\n z-index: 1000;\n color: #fff;\n background-color: #EB008A;\n border-radius: 0.3vw;\n padding: 1vw;"/>
+                <field name="item_button_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; right: 5%; bottom: 17%; font-size: 1.5vw; text-transform:uppercase; font-weight: bold; text-align: center; z-index: 1000; color: #fff; background-color: #EB008A; border-radius: 0.3vw; padding: 1vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_BUTTON_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_BUTTON_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n right: 5%;\n bottom: 17%;\n font-size: 1.5vw;\n text-transform:uppercase;\n font-weight: bold;\n text-align: center;\n z-index: 1000;\n color: #fff;\n background-color: #EB008A;\n border-radius: 0.3vw;\n padding: 1vw;"/>
 
                 <field name="item_button_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_BUTTON_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_BUTTON_ANIMATION_DESC" hint="fadeIn"/>
 
@@ -165,7 +165,7 @@
                     <option value="original">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_ORIGINAL_IMAGE</option>
                 </field>
 
-                <field name="item_image1_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 2s;\n position: absolute;\n bottom: 20%;\n left: 7%;\n z-index: 1002;"/>
+                <field name="item_image1_css" default="animation-duration: 5s; animation-delay: 2s; position: absolute; bottom: 20%; left: 7%; z-index: 1002;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 2s;\n position: absolute;\n bottom: 20%;\n left: 7%;\n z-index: 1002;"/>
 
                 <field name="item_image1_size_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_SIZE_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_IMAGE1_SIZE_CSS_DESC"/>
 
@@ -175,7 +175,7 @@
                 <field name="item_countdown_text_prefix" default="" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_TEXT_PREFIX_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_TEXT_PREFIX_DESC"/>
                 <field name="item_countdown_text_suffix" default="" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_TEXT_SUFFIX_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_TEXT_SUFFIX_DESC"/>
 
-                <field name="item_countdown_css" default="" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n right: 0%;\n bottom: 0%;\n font-size: 5vw;\n text-align: right;\n z-index: 1000;\n width: 100%;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
+                <field name="item_countdown_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; right: 0%; bottom: 0%; font-size: 5vw; text-align: right; z-index: 1000; width: 100%; color: #fff; background-color: rgba(0,0,0,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n right: 0%;\n bottom: 0%;\n font-size: 5vw;\n text-align: right;\n z-index: 1000;\n width: 100%;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_countdown_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_ANIMATION_DESC" hint="fadeIn"/>
 
