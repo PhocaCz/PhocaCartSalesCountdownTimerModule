@@ -7,7 +7,7 @@
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.5</version>
+	<version>3.5.6</version>
 	<description>MOD_PHOCACART_SALES_COUNTDOWN_TIMER_DESCRIPTION</description>
 	<projectName>PhocaCartSalesCountdownTimerModule</projectName>
 
@@ -178,6 +178,11 @@
                 <field name="item_countdown_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; right: 0%; bottom: 0%; font-size: 5vw; text-align: right; z-index: 1000; width: 100%; color: #fff; background-color: rgba(0,0,0,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n right: 0%;\n bottom: 0%;\n font-size: 5vw;\n text-align: right;\n z-index: 1000;\n width: 100%;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_countdown_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_ANIMATION_DESC" hint="fadeIn"/>
+				
+				<field name="item_countdown_skip_days" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_SKIP_DISPLAYING_DAYS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_SKIP_DISPLAYING_DAYS_DESC">
+                    <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>
+                    <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
+                </field>
 
                 <field name="item_ignore_quantity_rule" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_IGNORE_QUANTITY_RULE_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_IGNORE_QUANTITY_RULE_DESC">
                     <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>

@@ -80,6 +80,7 @@ $p['item_background_image_animation']     = $params->get('item_background_image_
 $p['item_limit']                          = $params->get('item_limit', 1);
 $p['load_animate_css']                    = $params->get('load_animate_css', 1);
 $p['load_swiper_library']                 = $params->get('load_swiper_library', 1);
+$p['item_countdown_skip_days']            = $params->get('item_countdown_skip_days', 0);
 
 $view   = $app->input->get('view', '');
 $option = $app->input->get('option', '');
@@ -439,9 +440,20 @@ if (!empty($items)) {
             $js[] = '  var now = new Date().getTime();';
             $js[] = '  var distance = phSCTountDownDate' . $i . ' - now;';
 
-            $js[] = '  var days = Math.floor(distance / (1000 * 60 * 60 * 24));';
-            $js[] = '  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));';
-            $js[] = '  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));';
+			if ($p['item_countdown_skip_days'] == 1) {
+				$js[] = '  var days = 0;';
+				$js[] = '  var hours = Math.floor(distance / (1000 * 60 * 60));';
+			} else {
+				$js[] = '  var days = Math.floor(distance / (1000 * 60 * 60 * 24));';
+				$js[] = '  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));';
+			}
+            
+			
+			
+            
+           
+
+		   $js[] = '  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));';
             $js[] = '  var seconds = Math.floor((distance % (1000 * 60)) / 1000);';
 
             $js[] = ' var daysO = days + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_DAY', true) . '";';
