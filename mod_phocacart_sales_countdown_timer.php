@@ -444,10 +444,10 @@ if (!empty($items)) {
             $js[] = '  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));';
             $js[] = '  var seconds = Math.floor((distance % (1000 * 60)) / 1000);';
 
-            $js[] = ' var daysO = days + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_DAY', true) . ' ";';
-            $js[] = ' var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . ' ";';
-            $js[] = ' var minutesO = ("0" + minutes.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_MINUTE', true) . ' ";';
-            $js[] = ' var secondsO = ("0" + seconds.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_SECOND', true) . ' ";';
+            $js[] = ' var daysO = days + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_DAY', true) . '";';
+            $js[] = ' var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+            $js[] = ' var minutesO = ("0" + minutes.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_MINUTE', true) . '";';
+            $js[] = ' var secondsO = ("0" + seconds.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_SECOND', true) . '";';
 
             $js[] = ' if (days == 0) {daysO = "";}';
             $js[] = ' if (hours == 0 && days == 0) {hoursO = "";}';
