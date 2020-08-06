@@ -2,12 +2,12 @@
 <extension type="module" client="site" method="upgrade" version="3.9">
 	<name>mod_phocacart_sales_countdown_timer</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>05/08/2020</creationDate>
+	<creationDate>06/08/2020</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.6</version>
+	<version>3.5.7</version>
 	<description>MOD_PHOCACART_SALES_COUNTDOWN_TIMER_DESCRIPTION</description>
 	<projectName>PhocaCartSalesCountdownTimerModule</projectName>
 

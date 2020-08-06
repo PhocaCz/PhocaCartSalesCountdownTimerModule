@@ -105,6 +105,7 @@ $discountParams = array();
 if ($p['item_limit'] > 0) {
     $discountParams['limit'] = (int)$p['item_limit'];
 }
+$discountParams['stock_check'] = (int)$p['item_stock_check'];
 $items = PhocacartDiscountProduct::getProductsDiscounts($discountParams);
 
 
@@ -447,17 +448,28 @@ if (!empty($items)) {
 				$js[] = '  var days = Math.floor(distance / (1000 * 60 * 60 * 24));';
 				$js[] = '  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));';
 			}
-            
-			
-			
-            
-           
+
+
+
+
+
 
 		   $js[] = '  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));';
             $js[] = '  var seconds = Math.floor((distance % (1000 * 60)) / 1000);';
 
             $js[] = ' var daysO = days + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_DAY', true) . '";';
-            $js[] = ' var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+
+
+            if ($p['item_countdown_skip_days'] == 1) {
+                $js[] = ' var hoursL = hours.toString().length;';
+                $js[] = ' if (hoursL < 3) {';
+                $js[] = '    var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+                $js[] = ' } else {';
+                $js[] = '    var hoursO = (hours.toString()) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+                $js[] = ' }';
+            } else {
+                $js[] = ' var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+            }
             $js[] = ' var minutesO = ("0" + minutes.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_MINUTE', true) . '";';
             $js[] = ' var secondsO = ("0" + seconds.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_SECOND', true) . '";';
 
