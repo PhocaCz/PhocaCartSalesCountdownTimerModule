@@ -2,7 +2,7 @@
 <extension type="module" client="site" method="upgrade" version="3.9">
 	<name>mod_phocacart_sales_countdown_timer</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>06/08/2020</creationDate>
+	<creationDate>19/09/2020</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
@@ -72,6 +72,12 @@
                 <field name="display_option" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_COMPONENT_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_COMPONENT_DESC"/>
 
                 <field name="display_view" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_VIEW_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_VIEW_DESC"/>
+
+
+                <field name="display_featured" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_FEATURED_PRODUCTS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_DISPLAY_FEATURED_PRODUCTS_DESC">
+                    <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>
+                    <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>
+                </field>
 
                 <field name="load_animate_css" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_LOAD_ANIMATE_CSS_LIBRARY_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_LOAD_ANIMATE_CSS_LIBRARY_DESC">
                     <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>
@@ -178,7 +184,7 @@
                 <field name="item_countdown_css" default="animation-duration: 5s; animation-delay: 0s; position: absolute; right: 0%; bottom: 0%; font-size: 5vw; text-align: right; z-index: 1000; width: 100%; color: #fff; background-color: rgba(0,0,0,0.5); padding: 0 0.5vw;" type="textarea" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_CSS_DESC" hint=" animation-duration: 5s;\n animation-delay: 0s;\n position: absolute;\n right: 0%;\n bottom: 0%;\n font-size: 5vw;\n text-align: right;\n z-index: 1000;\n width: 100%;\n color: #fff;\n background-color: rgba(0,0,0,0.5);\n padding: 0 0.5vw;"/>
 
                 <field name="item_countdown_animation" default="" size="10" type="text" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_ANIMATION_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_ITEM_COUNTDOWN_TIMER_ANIMATION_DESC" hint="fadeIn"/>
-				
+
 				<field name="item_countdown_skip_days" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_SKIP_DISPLAYING_DAYS_LABEL" description="MOD_PHOCACART_SALES_COUNTDOWN_TIMER_FIELD_SKIP_DISPLAYING_DAYS_DESC">
                     <option value="1">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_YES</option>
                     <option value="0">MOD_PHOCACART_SALES_COUNTDOWN_TIMER_NO</option>

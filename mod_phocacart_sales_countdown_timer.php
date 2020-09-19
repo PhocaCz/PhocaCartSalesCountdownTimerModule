@@ -81,6 +81,9 @@ $p['item_limit']                          = $params->get('item_limit', 1);
 $p['load_animate_css']                    = $params->get('load_animate_css', 1);
 $p['load_swiper_library']                 = $params->get('load_swiper_library', 1);
 $p['item_countdown_skip_days']            = $params->get('item_countdown_skip_days', 0);
+$p['display_featured']                    = $params->get('display_featured', 0);
+
+
 
 $view   = $app->input->get('view', '');
 $option = $app->input->get('option', '');
@@ -109,8 +112,21 @@ $discountParams['stock_check'] = (int)$p['item_stock_check'];
 $items = PhocacartDiscountProduct::getProductsDiscounts($discountParams);
 
 
-if (empty($items) || !isset($items[0]->product_id)) {
-    return '';
+$t = array();
+$t['featured'] = false;
+if (empty($items) || !isset($items[0]->discount_id)) {
+
+    // No discount product, try to find featured
+    if ($p['display_featured'] == 1) {
+        $items         = PhocacartDiscountProduct::getProductsFeatured($discountParams);
+        $t['featured'] = true;
+
+        if (empty($items) || !isset($items[0]->id)) {
+            return '';
+        }
+    } else {
+        return '';
+    }
 }
 
 
@@ -124,7 +140,8 @@ if ($p['load_swiper_library'] == 1) {
 HTMLHelper::_('stylesheet', 'media/mod_phocacart_sales_countdown_timer/css/style.css', array('version' => 'auto'));
 
 $path              = array();
-$path['itemimage'] = PhocacartPath::getPath('productimage');;
+$path['media'] = JUri::base();
+$path['itemimage'] = PhocacartPath::getPath('productimage');
 
 
 $rand = rand(10000, 99999);
@@ -138,8 +155,9 @@ if (!empty($items)) {
     $i = 0;
     foreach ($items as $k => $v) {
 
-
         if (isset($v->background_image) && $v->background_image != '') {
+
+
 
             //$s[] = '#'.$id.' .ph-swiper-slide-box-'.$i.' {';
             //$s[] = '    position:relative;';
@@ -148,7 +166,7 @@ if (!empty($items)) {
 
             $s[] = '#' . $id . ' .ph-swiper-slide-box-bg-' . $i . ' {'; // X because kenburnsBottomLeft does not fit the width
             //$s[] = '#' . $id . ' .ph-swiper-slide-box-' . $i . ' {';
-            $s[] = '    background-image:url(' . JUri::base() . $path['itemimage']['orig_rel_ds'] . $v->background_image . ');';
+            $s[] = '    background-image:url(' . JUri::base() . /*$path['itemimage']['orig_rel_ds'] .*/ $v->background_image . ');';
             $s[] = '    -webkit-background-size: cover;';
             $s[] = '    background-size: cover;';
             $s[] = '    background-position: center;';
@@ -166,21 +184,21 @@ if (!empty($items)) {
         $s[] = '    display:none;';
         $s[] = '}';
 
-        if ($p['item_description_display'] == 1 && $v->product_description != '') {
+        if ($p['item_description_display'] == 1 && $v->description != '') {
             $s[] = '#' . $id . ' .ph-product-description-' . $i . ' {';
             $s[] = '    ' . $p['item_description_css'] . '';
             $s[] = '    display:none;';
             $s[] = '}';
         }
 
-        if ($p['item_discount_description_display'] == 1 && $v->description != '') {
+        if ($p['item_discount_description_display'] == 1 && isset($v->discount_description) && $v->discount_description != '') {
             $s[] = '#' . $id . ' .ph-discount-description-' . $i . ' {';
             $s[] = '    ' . $p['item_discount_description_css'] . '';
             $s[] = '    display:none;';
             $s[] = '}';
         }
 
-        if ($p['item_stock_display'] == 1 && $v->product_stock != '') {
+        if ($p['item_stock_display'] == 1 && $v->stock != '') {
             $s[] = '#' . $id . ' .ph-stock-' . $i . ' {';
             $s[] = '    ' . $p['item_stock_css'] . '';
             $s[] = '    display:none;';
@@ -201,7 +219,7 @@ if (!empty($items)) {
         $s[] = '}';
 
 
-        if ($v->product_image != '') {
+        if ($v->image != '') {
             $s[] = '#' . $id . ' .ph-image1-' . $i . ' {';
             $s[] = '    ' . $p['item_image1_css'] . '';
             $s[] = '    display:none;';
@@ -430,9 +448,9 @@ if (!empty($items)) {
     $i = 0;
     foreach ($items as $k => $v) {
 
-        if (isset($v->valid_to) && $v->valid_to != '0000-00-00 00:00:00') {
+        if (isset($v->discount_valid_to) && $v->discount_valid_to != '0000-00-00 00:00:00') {
 
-            $validTo = str_replace('00:00:00', '23:59:59', $v->valid_to);
+            $validTo = str_replace('00:00:00', '23:59:59', $v->discount_valid_to);
 
 
             $js[] = 'var phSCTountDownDate' . $i . ' = new Date("' . $validTo . '").getTime();';

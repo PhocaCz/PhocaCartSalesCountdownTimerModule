@@ -34,62 +34,71 @@ if (!empty($items)) {
 
     foreach ($items as $k => $v) {
 
-        if (!isset($v->product_id) || (isset($v->product_id) && (int)$v->product_id == 0)) {
-            continue;
+        if ($t['featured']) {
+            // Check product ID by featured products
+            if (!isset($v->id) || (isset($v->id) && (int)$v->id == 0)) {
+                continue;
+            }
+        } else {
+            // Check discount ID by discounts
+            if (!isset($v->discount_id) || (isset($v->discount_id) && (int)$v->discount_id == 0)) {
+                continue;
+            }
         }
+
 
         echo '<div class="swiper-slide ph-swiper-slide-box-' . $i . '">';
         echo '<div class="swiper-slide ph-swiper-slide-box-bg-' . $i . '"></div>';
 
         // TITLE
         if ($v->title != '') {
-            echo '<div class="ph-title-' . $i . '" data-swiper-parallax="-300">' . $v->product_title . '</div>';
+            echo '<div class="ph-title-' . $i . '" data-swiper-parallax="-300">' . $v->title . '</div>';
         }
 
         // PRODUCT DESCRIPTION
-        if ($p['item_description_display']  == 1 && $v->product_description != '') {
-            echo '<div class="ph-product-description-' . $i . '" data-swiper-parallax="-300">' . PhocacartText::removeFirstTag($v->product_description, 'p') . '</div>';
+        if ($p['item_description_display']  == 1 && $v->description != '') {
+            echo '<div class="ph-product-description-' . $i . '" data-swiper-parallax="-300">' . PhocacartText::removeFirstTag($v->description, 'p') . '</div>';
         }
 
 
         // PRODUCT PRICE
-        $priceItems    = $price->getPriceItems($v->product_price, $v->tax_id, $v->tax_rate, $v->tax_calculationtype, $v->tax_title, $v->product_unit_amount, $v->product_unit_unit, 1, 1, $v->group_price);
+        $priceItems    = $price->getPriceItems($v->price, $v->tax_id, $v->tax_rate, $v->tax_calculationtype, $v->tax_title, $v->unit_amount, $v->unit_unit, 1, 1, $v->group_price);
         $priceItemsDefault = $priceItems;
         $discountParams = array();
         if ($p['item_ignore_quantity_rule'] == 1) {
             $discountParams['ignore_quantity_rule'] = 1;
         }
-        $priceDiscount = PhocacartDiscountProduct::getProductDiscountPrice($v->product_id, $priceItems, $discountParams);
+        $priceDiscount = PhocacartDiscountProduct::getProductDiscountPrice($v->id, $priceItems, $discountParams);
 
         echo '<div class=" ph-price-' . $i . '" data-swiper-parallax="-300">';
         echo '<div class="ph-mod-sct-price-box">';
         if ($priceItems['brutto']) {
             echo '<div class="ph-mod-sct-price-new">'.$priceItems['bruttoformat'].'</div>';
         }
-        if ($priceItemsDefault['brutto']) {
+        if ($priceItemsDefault['brutto'] && !$t['featured']) {
             echo '<div class="ph-mod-sct-price-original">'.$priceItemsDefault['bruttoformat'].'</div>';
         }
         echo '</div>';
         echo '</div>';
 
         // DISCOUNT DESCRIPTION
-        if ($p['item_discount_description_display'] == 1 && $v->description != '') {
-            echo '<div class="ph-discount-description-' . $i . '" data-swiper-parallax="-300">' . PhocacartText::removeFirstTag($v->description, 'p') . '</div>';
+        if ($p['item_discount_description_display'] == 1 && isset($v->discount_description) && $v->discount_description != '' ) {
+            echo '<div class="ph-discount-description-' . $i . '" data-swiper-parallax="-300">' . PhocacartText::removeFirstTag($v->discount_description, 'p') . '</div>';
         }
 
         // STOCK
-        if ($p['item_stock_display'] == 1 && $v->product_stock != '') {
-            echo '<div class="ph-stock-' . $i . '" data-swiper-parallax="-300">' . $p['item_stock_text_prefix'] .  $v->product_stock . $p['item_stock_text_suffix'] . '</div>';
+        if ($p['item_stock_display'] == 1 && $v->stock != '') {
+            echo '<div class="ph-stock-' . $i . '" data-swiper-parallax="-300">' . $p['item_stock_text_prefix'] .  $v->stock . $p['item_stock_text_suffix'] . '</div>';
         }
 
         // IMAGE
-        if ($p['item_image1_display'] == 1 && $v->product_image != '') {
+        if ($p['item_image1_display'] == 1 && $v->image != '') {
 
             if ($p['item_image1_type'] == 'original') {
-                $imageO = $path['itemimage']['orig_rel_ds'] . $v->product_image;
+                $imageO = $path['itemimage']['orig_rel_ds'] . $v->image;
             } else {
 
-                $image  = PhocacartImage::getThumbnailName($path['itemimage'], $v->product_image, $p['item_image1_type']);
+                $image  = PhocacartImage::getThumbnailName($path['itemimage'], $v->image, $p['item_image1_type']);
                 $imageO = isset($image->rel) && $image->rel != '' ? $image->rel : '';
             }
 
@@ -104,7 +113,7 @@ if (!empty($items)) {
 
             if ($p['item_button_link_type'] == 1) {
 
-                $link = JRoute::_(PhocacartRoute::getItemRoute($v->product_id, $v->category_id, $v->product_alias, $v->category_alias));
+                $link = JRoute::_(PhocacartRoute::getItemRoute($v->id, $v->category_id, $v->alias, $v->category_alias));
 
                 echo '<a href="' . $link . '">';
             }
