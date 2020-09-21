@@ -58,7 +58,7 @@ Phoca Cart Sales Countdown Timer Module - a Joomla! CMS module which displays sa
 
 ## Version
 
-3.5.7
+3.5.8
 
 
 
