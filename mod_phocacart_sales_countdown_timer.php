@@ -83,7 +83,7 @@ $p['load_swiper_library']                 = $params->get('load_swiper_library', 
 $p['item_countdown_skip_days']            = $params->get('item_countdown_skip_days', 0);
 $p['display_featured']                    = $params->get('display_featured', 0);
 
-
+//$layout           							= $params->get('layout', 'default');
 
 $view   = $app->input->get('view', '');
 $option = $app->input->get('option', '');
@@ -527,14 +527,10 @@ $js[] = '      phSwiperMode' . $idJs . '();';
 $js[] = '   });';// document ready/window load
 
 $js[] = ' jQuery( document ).ready(function() {';
-$js[] = '  window.addEventListener(\'resize\', function() {';
-$js[] = '      phSwiperMode' . $idJs . '();';
-$js[] = '  });';
-
 $js[] = '   });';// document ready/window load
 
 
 $document->addScriptDeclaration(implode("\n", $js));
 
-require(JModuleHelper::getLayoutPath('mod_phocacart_sales_countdown_timer'));
+require(JModuleHelper::getLayoutPath('mod_phocacart_sales_countdown_timer', $params->get('layout', 'default')));
 ?>
