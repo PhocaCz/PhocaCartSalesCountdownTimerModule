@@ -68,6 +68,9 @@ if (!empty($items)) {
         if ($p['item_ignore_quantity_rule'] == 1) {
             $discountParams['ignore_quantity_rule'] = 1;
         }
+
+        $discountParams['ignore_view_rule'] = 1;
+
         $priceDiscount = PhocacartDiscountProduct::getProductDiscountPrice($v->id, $priceItems, $discountParams);
 
         echo '<div class=" ph-price-' . $i . '" data-swiper-parallax="-300">';
