@@ -7,7 +7,7 @@
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.4</version>
+	<version>3.5.10</version>
 	<description>MOD_PHOCACART_SALES_COUNTDOWN_TIMER_DESCRIPTION</description>
 	<projectName>PhocaCartSalesCountdownTimerModule</projectName>
 
@@ -20,6 +20,7 @@
 	<files>
 		<folder>tmpl</folder>
 		<filename module="mod_phocacart_sales_countdown_timer">index.html</filename>
+		<filename module="mod_phocacart_sales_countdown_timer">manifest.xml</filename>
 		<filename module="mod_phocacart_sales_countdown_timer">mod_phocacart_sales_countdown_timer.php</filename>
 	</files>
 
