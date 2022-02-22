@@ -8,6 +8,9 @@
  * @copyright Copyright (C) Jan Pavelka www.phoca.cz
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License version 2 or later;
  */
+
+use Joomla\CMS\Router\Route;
+
 defined('_JEXEC') or die('Restricted access');
 
 $price = new PhocacartPrice();
@@ -116,7 +119,7 @@ if (!empty($items)) {
 
             if ($p['item_button_link_type'] == 1) {
 
-                $link = JRoute::_(PhocacartRoute::getItemRoute($v->id, $v->category_id, $v->alias, $v->category_alias));
+                $link = Route::_(PhocacartRoute::getItemRoute($v->id, $v->category_id, $v->alias, $v->category_alias));
 
                 echo '<a href="' . $link . '">';
             }

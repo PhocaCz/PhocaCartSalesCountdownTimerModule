@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" client="site" method="upgrade" version="3.9">
+<extension type="module" client="site" method="upgrade" version="4.0">
 	<name>mod_phocacart_sales_countdown_timer</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>29/10/2020</creationDate>
+	<creationDate>22/02/2022</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.10</version>
+	<version>4.0.0</version>
 	<description>MOD_PHOCACART_SALES_COUNTDOWN_TIMER_DESCRIPTION</description>
 	<projectName>PhocaCartSalesCountdownTimerModule</projectName>
 
@@ -20,7 +20,6 @@
 	<files>
 		<folder>tmpl</folder>
 		<filename module="mod_phocacart_sales_countdown_timer">index.html</filename>
-		<filename module="mod_phocacart_sales_countdown_timer">manifest.xml</filename>
 		<filename module="mod_phocacart_sales_countdown_timer">mod_phocacart_sales_countdown_timer.php</filename>
 	</files>
 
@@ -210,7 +209,7 @@
 
             <fieldset name="advanced">
 			
-			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+			<field name="layout" class="form-select" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
 
             </fieldset>
         </fields>

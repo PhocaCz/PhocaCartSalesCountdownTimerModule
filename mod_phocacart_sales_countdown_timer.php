@@ -10,22 +10,26 @@
  */
 defined('_JEXEC') or die('Restricted access');// no direct access
 
+use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
 
-if (!JComponentHelper::isEnabled('com_phocacart', true)) {
-    $app = JFactory::getApplication();
-    $app->enqueueMessage(JText::_('Phoca Cart Error'), JText::_('Phoca Cart is not installed on your system'), 'error');
+if (!ComponentHelper::isEnabled('com_phocacart', true)) {
+    $app = Factory::getApplication();
+    $app->enqueueMessage(Text::_('Phoca Cart Error'), Text::_('Phoca Cart is not installed on your system'), 'error');
     return;
 }
 
 JLoader::registerPrefix('Phocacart', JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/phocacart');
 
-$lang = JFactory::getLanguage();
+$lang = Factory::getLanguage();
 $lang->load('com_phocacart');
 
-$app      = JFactory::getApplication();
-$document = JFactory::getDocument();
-$document = JFactory::getDocument();
+$app      = Factory::getApplication();
+$document = Factory::getDocument();
+$document = Factory::getDocument();
 $media    = PhocacartRenderMedia::getInstance('main');
 //$media->loadBase();
 //$media->loadBootstrap();
@@ -150,6 +154,7 @@ $idJs = 'pS' . $rand;
 
 $s = array();
 // STYLE
+
 if (!empty($items)) {
 
     $i = 0;
@@ -442,8 +447,8 @@ $js[] = '  }';// end phSwiperMode
 
 
 // Countdown
-$cdPrefix = '<span class="ph-mod-sct-countdown-text-prefix">' . JText::_($p['item_countdown_text_prefix'], true) . '</span>';
-$cdSuffix = '<span class="ph-mod-sct-countdown-text-suffix">' . JText::_($p['item_countdown_text_suffix'], true) . '</span>';
+$cdPrefix = '<span class="ph-mod-sct-countdown-text-prefix">' . Text::_($p['item_countdown_text_prefix'], true) . '</span>';
+$cdSuffix = '<span class="ph-mod-sct-countdown-text-suffix">' . Text::_($p['item_countdown_text_suffix'], true) . '</span>';
 if (!empty($items)) {
     $i = 0;
     foreach ($items as $k => $v) {
@@ -475,21 +480,21 @@ if (!empty($items)) {
 		   $js[] = '  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));';
             $js[] = '  var seconds = Math.floor((distance % (1000 * 60)) / 1000);';
 
-            $js[] = ' var daysO = days + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_DAY', true) . '";';
+            $js[] = ' var daysO = days + "' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_DAY', true) . '";';
 
 
             if ($p['item_countdown_skip_days'] == 1) {
                 $js[] = ' var hoursL = hours.toString().length;';
                 $js[] = ' if (hoursL < 3) {';
-                $js[] = '    var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+                $js[] = '    var hoursO = ("0" + hours.toString()).slice(-2) + "' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
                 $js[] = ' } else {';
-                $js[] = '    var hoursO = (hours.toString()) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+                $js[] = '    var hoursO = (hours.toString()) + "' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
                 $js[] = ' }';
             } else {
-                $js[] = ' var hoursO = ("0" + hours.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
+                $js[] = ' var hoursO = ("0" + hours.toString()).slice(-2) + "' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_HOUR', true) . '";';
             }
-            $js[] = ' var minutesO = ("0" + minutes.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_MINUTE', true) . '";';
-            $js[] = ' var secondsO = ("0" + seconds.toString()).slice(-2) + "' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_SECOND', true) . '";';
+            $js[] = ' var minutesO = ("0" + minutes.toString()).slice(-2) + "' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_MINUTE', true) . '";';
+            $js[] = ' var secondsO = ("0" + seconds.toString()).slice(-2) + "' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_COUNTDOWN_SHORTCUT_TEXT_SECOND', true) . '";';
 
             $js[] = ' if (days == 0) {daysO = "";}';
             $js[] = ' if (hours == 0 && days == 0) {hoursO = "";}';
@@ -500,7 +505,7 @@ if (!empty($items)) {
 
             $js[] = '  if (distance < 0) {';
             $js[] = '    clearInterval(phSCTX' . $i . ');';
-            $js[] = '    document.getElementById("phSCTCountDown' . $i . '").innerHTML = \'' . JText::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_EXPIRED', true) . '\';';
+            $js[] = '    document.getElementById("phSCTCountDown' . $i . '").innerHTML = \'' . Text::_('MOD_PHOCACART_SALES_COUNTDOWN_TIMER_EXPIRED', true) . '\';';
             $js[] = '  }';
             $js[] = '}, 1000);';
 
@@ -532,5 +537,5 @@ $js[] = '   });';// document ready/window load
 
 $document->addScriptDeclaration(implode("\n", $js));
 
-require(JModuleHelper::getLayoutPath('mod_phocacart_sales_countdown_timer', $params->get('layout', 'default')));
+require(ModuleHelper::getLayoutPath('mod_phocacart_sales_countdown_timer', $params->get('layout', 'default')));
 ?>

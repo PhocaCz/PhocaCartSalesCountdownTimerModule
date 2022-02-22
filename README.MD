@@ -2,7 +2,7 @@
 
 
 
-![Phoca Cart Sales Countdown Timer Module](https://github.com/PhocaCz/PhocaCartSalesCountdownTimerModule/blob/master/mod_phocacart_sales_countdown_timer.png)
+![Phoca Cart Sales Countdown Timer Module](https://github.com/PhocaCz/PhocaCartSalesCountdownTimerModule/blob/master/mod_phocacart_sales_countdown_timer.png?raw=true)
 
 # Phoca Cart Sales Countdown Timer Module
 
@@ -56,9 +56,13 @@ Phoca Cart Sales Countdown Timer Module - a Joomla! CMS module which displays sa
 
 
 
-## Version
+## Version (Joomla! 3.x)
 
 3.5.10
+
+## Version (Joomla! 4.x)
+
+4.0.0
 
 
 
